@@ -57,6 +57,8 @@ npx expo start
 - Important: `npm audit fix --force` applied breaking upgrades (e.g., `expo` and `react-native`) which may require additional validation and testing on your side.
 - There are peer dependency warnings in package.json — notably `react-native@0.82.1` may require `react@^19.1.1`. I recommend running and testing the app on a device/emulator and updating `react` (and other peer deps) if you see runtime warnings.
 
+- I also updated `react` to `^19.2.0` to satisfy the `react-native@0.82.1` peer requirement; that change is committed to the `fix/audit-force` branch.
+
 If you want me to continue I can:
 
 1. Upgrade `react` to a compatible version and update any code that needs changes for React 19.
