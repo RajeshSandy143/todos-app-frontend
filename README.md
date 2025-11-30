@@ -50,3 +50,16 @@ npx expo start
 - updated `services/api.js` to use the new config
 - added delete functionality to each todo in `components/TodoItem.js` (confirmation + API call)
 - updated this README with requirements and run/setup instructions
+
+## Security / audit updates performed
+
+- I created a branch `fix/audit-force` and ran `npm audit fix --force` to address all reported vulnerabilities. After the force-fix the npm audit shows no remaining vulnerabilities.
+- Important: `npm audit fix --force` applied breaking upgrades (e.g., `expo` and `react-native`) which may require additional validation and testing on your side.
+- There are peer dependency warnings in package.json — notably `react-native@0.82.1` may require `react@^19.1.1`. I recommend running and testing the app on a device/emulator and updating `react` (and other peer deps) if you see runtime warnings.
+
+If you want me to continue I can:
+
+1. Upgrade `react` to a compatible version and update any code that needs changes for React 19.
+2. Do a staged, manual upgrade of Expo/React Native (safer) and resolve breaking changes iteratively.
+3. Keep the `fix/audit-force` branch remote so you can run it in CI — I can open a PR for review.
+
